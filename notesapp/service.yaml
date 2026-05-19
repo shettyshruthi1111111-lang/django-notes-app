@@ -1,11 +1,12 @@
-kind: Service                             
 apiVersion: v1
+kind: Service
 metadata:
   name: todo-service
 spec:
-  ports:
-    - port: 80                               
-      targetPort: 8000                
-  selector:
-    app: todo-app                    
   type: NodePort
+  selector:
+    app: todo-app
+  ports:
+    - port: 80
+      targetPort: 8000
+      nodePort: 30080
